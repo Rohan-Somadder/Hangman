@@ -61,7 +61,7 @@ def game(p):
     if ans != random_word:
         print(
             f"\nSorry you coudn't guess the word which was : {random_word}\n")
-    p.update_lives(6)
+    p.update_lives(6-p.ret_lives())
 
 
 def rules():

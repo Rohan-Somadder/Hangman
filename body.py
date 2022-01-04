@@ -1,4 +1,6 @@
 ''' Contains different states of body of hangman'''
+
+
 def man(num):
     ''' returns the state of man acc to the input'''
     if num == 0:
@@ -78,4 +80,5 @@ def man(num):
 |       
 |
 '''
-    return body
+    if 0 <= num <= 6:
+        return body
