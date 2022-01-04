@@ -59,6 +59,7 @@ def game(p):
             p.update_score(5)
             break
     if ans != random_word:
+        print(man(6))
         print(
             f"\nSorry you coudn't guess the word which was : {random_word}\n")
     p.update_lives(6-p.ret_lives())
