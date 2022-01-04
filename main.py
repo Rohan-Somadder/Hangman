@@ -26,7 +26,7 @@ class Player:
 
 
 def display_menu():
-    print("MENU".center(30, "-"))
+    print(f"\n{'MENU'.center(30,'-')}")
     print("1    -->  Start Game")
     print("2    -->  Score")
     print("3    -->  Rules")
@@ -65,10 +65,16 @@ def game(p):
 
 
 def rules():
-    print("RULES".center(30, '='))
+    print(f"\n{'RULES'.center(30, '=')}")
+    print("1. A random word is choosen try to guess it by guessing its letters.")
+    print("2. You have 6 lives.")
+    print("3. For each correct letter you get 1 point.")
+    print("4. And if you get the word correct you get 5 more points.")
+    print("\nHave fun playing and guessing...")
 
 
 def hangman():
+    print(f"\n{'HANGMAN'.center(30,'~')}\n")
     name = input("Enter Your Name: ")
     player = Player(name)
     while True:
@@ -82,13 +88,14 @@ def hangman():
             game(player)
             val = input("Do you want to play again? (Y/N) : ")
         elif inp == 2:
-            print(f"\n{player.ret_name()}'s Score : {player.ret_score()}\n")
+            print(f"\n{player.ret_name()}'s Score : {player.ret_score()}")
         elif inp == 3:
             rules()
         if val.upper() != 'Y':
             break
+    pause(
+        f"\nThank you for playing!!! Your total score: {player.ret_score()}\n\nPress any key to exit....")
 
 
 if __name__ == '__main__':
     hangman()
-    pause("\nThank you for playing!!!\n\nPress any key to exit....")
