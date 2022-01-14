@@ -36,9 +36,11 @@ def display_menu():
 def game(p):
     random_word = word()
     ans = '-'*len(random_word)
+    wrong_choice = ''
     while p.ret_lives():
         print(man(6-p.ret_lives()))
         print(f"Word : {ans}\t\tLives left : {p.ret_lives()}")
+        print("Incorrect Guesses : ", wrong_choice)
         ch = input("Enter : ")
         if ch in random_word:
             temp_word = ""
@@ -54,6 +56,10 @@ def game(p):
         else:
             print("Your choice isn't present in the word, try again!!!")
             p.update_lives(-1)
+            if not wrong_choice:
+                wrong_choice += ch.upper()
+            else:
+                wrong_choice += " , " + ch.upper()
         if ans == random_word:
             print("Well done, you have won!!!")
             p.update_score(5)
