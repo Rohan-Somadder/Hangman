@@ -107,6 +107,9 @@ def game(game_player):
             if not wrong_choice:
                 wrong_choice += choice.upper()
             else:
+                if choice.upper() in wrong_choice:
+                    game_player.update_lives(1)
+                    continue
                 wrong_choice += " , " + choice.upper()
         if ans == random_word:
             # If the player correctly guessed the word
