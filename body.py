@@ -1,10 +1,7 @@
 ''' Contains different states of body of hangman'''
 
-
-def man(num):
-    ''' returns the state of man acc to the input'''
-    if num == 0:
-        body = '''
+body = {
+    0: '''
 |-------|
 |       |
 |      (.)
@@ -13,9 +10,8 @@ def man(num):
 |      /|\\
 |     / | \\
 |
-'''
-    elif num == 1:
-        body = '''
+''',
+    1: '''
 |-------|
 |       |
 |      (.)
@@ -24,9 +20,8 @@ def man(num):
 |      /|
 |     / |
 |
-'''
-    elif num == 2:
-        body = '''
+''',
+    2: '''
 |-------|
 |       |
 |      (.)
@@ -35,9 +30,8 @@ def man(num):
 |       |
 |       |
 |
-'''
-    elif num == 3:
-        body = '''
+''',
+    3: '''
 |-------|
 |       |
 |      (.)
@@ -46,9 +40,8 @@ def man(num):
 |       |
 |       |
 |
-'''
-    elif num == 4:
-        body = '''
+''',
+    4: '''
 |-------|
 |       |
 |      (.)
@@ -57,9 +50,8 @@ def man(num):
 |       |
 |       |
 |
-'''
-    elif num == 5:
-        body = '''
+''',
+    5: '''
 |-------|
 |       |
 |      (.)
@@ -68,9 +60,8 @@ def man(num):
 |       
 |       
 |
-'''
-    elif num == 6:
-        body = '''
+''',
+    6: '''
 |-------|
 |       |
 |      (xx)
@@ -80,5 +71,9 @@ def man(num):
 |       
 |
 '''
-    if 0 <= num <= 6:
-        return body
+}
+
+
+def man(num):
+    ''' returns the state of man acc to the input'''
+    return body[num]
